@@ -1,0 +1,5 @@
+name: ModularBasics-Homes
+version: 1.0.0
+main: me.jishunamatata.modularhomes.ModularHomes
+api-version: 1.16
+depend: [ModularCore]
