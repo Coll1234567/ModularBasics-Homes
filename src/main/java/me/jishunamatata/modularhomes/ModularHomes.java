@@ -1,16 +1,15 @@
 package me.jishunamatata.modularhomes;
 
-import org.bukkit.plugin.java.JavaPlugin;
+import me.jishunamatata.modularcore.database.DatabaseManager;
+import me.jishunamatata.modularcore.utils.ModularPlugin;
+import me.jishunamatata.modularcore.utils.SimpleSemVersion;
 
-import me.jishunamatata.modularcore.IModularPlugin;
-import me.jishunamatata.modularcore.SimpleSemVersion;
+public class ModularHomes extends ModularPlugin {
 
-public class ModularHomes extends JavaPlugin implements IModularPlugin {
-	
 	private final SimpleSemVersion MIN_CORE_VERSION = SimpleSemVersion.fromString("1.0.1");
 
 	public void onEnable() {
-		getLogger().severe("test");
+		DatabaseManager.executeUpdate(this, "CREATE TABLE IF NOT EXISTS 'test' ('col' VARCHAR(16) NOT NULL);");
 	}
 
 	@Override
